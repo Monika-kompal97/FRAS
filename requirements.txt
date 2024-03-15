@@ -1,4 +1,4 @@
 flask
 Gunicorn
 firebase_admin
-opencv-python==4.7.0
+opencv-python
