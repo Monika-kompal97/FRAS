@@ -1,2 +1,4 @@
 flask
 Gunicorn
+firebase_admin
+opencv-python
