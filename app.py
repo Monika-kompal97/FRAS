@@ -17,7 +17,7 @@ app.secret_key = 'Monu@143'
 # Dummy data for students and admins (in real-world scenarios, this data would be stored in a database)
 students = []
 admins = [{'username': 'admin', 'password': 'admin'}]"""
-app = Flask(__name__,template_folder="C:/Users/Admin/OneDrive/Desktop/trial/templates")
+app = Flask(__name__,template_folder="templates")
 app.secret_key = 'Monu@143'
 
 @app.route('/')
