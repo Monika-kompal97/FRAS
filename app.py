@@ -90,7 +90,7 @@ def capture_by_frames(usn):
     print(usn)
     global camera
     # camera = cv2.VideoCapture(0)
-    camera=cv2.VideoCapture(index, cv2.CAP_V4L)
+    camera=cv2.VideoCapture(0, cv2.CAP_V4L)
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     count = 0  # Counter to track captured images
     while count < 100:
