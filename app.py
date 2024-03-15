@@ -104,6 +104,7 @@ def capture_by_frames(usn):
             # Save the face image
             face_img = frame[y:y+h, x:x+w]
             filename = f"{usn}_{count}.jpg"
+            print(filename)
             cv2.imwrite(filename, face_img)
             upload_to_firebase(filename, usn)
             count += 1
