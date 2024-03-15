@@ -91,7 +91,7 @@ def capture_by_frames(usn):
     global camera
     # camera = cv2.VideoCapture(0)
     # camera=cv2.VideoCapture(0, cv2.CAP_V4L)
-    camera = cv2.VideoCapture(0)
+    camera = cv2.VideoCapture(1)
     if not camera.isOpened():
         print("Error: Unable to open camera.")
         camera = None
