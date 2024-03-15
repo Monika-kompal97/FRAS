@@ -148,6 +148,7 @@ def video_capture():
             return Response(capture_by_frames(usn), mimetype='multipart/x-mixed-replace; boundary=frame')
     else:
         return redirect(url_for('register'))"""
+    print("monika")
     return Response(capture_by_frames(usn), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/admin/dashboard')
