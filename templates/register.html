@@ -1,0 +1,167 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <h1>Student Registration</h1>
+    <form action="/register" method="POST">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="usn">USN:</label>
+        <input type="text" id="usn" name="usn" required>
+        <br>
+        <label for="sem">Sem:</label>
+        <input type="text" id="sem" name="sem" required>
+        <br>
+        <label for="branch">branch:</label>
+        <input type="text" id="branch" name="branch" required>
+        <br>
+        <button type="button" onclick="startWebcam()">Start Capture</button>
+        <img id ="video_feed" src="{{ url_for('video_capture') }}" width="50%">
+        <br>
+        <button type="submit">submit</button>
+    </form>
+    
+    
+        
+    <script>
+        function startWebcam() {
+            document.getElementById('video_feed').style.display = 'block';
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <h1>Student Registration</h1>
+    <form action="/register" method="POST">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="usn">USN:</label>
+        <input type="text" id="usn" name="usn" required>
+        <br>
+        <label for="sem">Sem:</label>
+        <input type="text" id="sem" name="sem" required>
+        <br>
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" required>
+        <br>
+        
+        <button type="button" onclick="startCapture()">Start Capture</button>
+        <br>
+       
+        <video id="video" width="320" height="240" style="display: none;"></video>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        function startCapture() {
+            
+            var usn = document.getElementById("usn").value;
+            
+            window.location.href = "/video_capture?usn=" + usn;
+        }
+    </script>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <title>student_registration</title>
+  </head>
+  <body>
+   <div class="half">
+    <div class="bg order-1 order-md-2" style="background-image: url('{{ url_for('static', filename='images/shutterstock_1367090597.jpg') }}');"></div>
+    <div class="contents order-2 order-md-1">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6">
+            <div class="form-block">
+              <div class="text-center mb-5">
+              <h3>Register to <strong>Attendance System</strong></h3>
+              <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
+              </div>
+              <form action="/register" method="POST">
+                <div class="form-group first">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" placeholder="your name" id="username" name="username">
+                </div>
+                <div class="form-group last mb-3">
+                  <label for="USN">USN</label>
+                  <input type="text" class="form-control" placeholder="Your USN" id="usn"  name="usn">
+                </div>
+                <div class="form-group last mb-3">
+                    <label for="Sem">Sem</label>
+                    <input type="text" class="form-control" placeholder="Your semester" id="sem" name="sem">
+                  </div>
+                  <div class="form-group last mb-3">
+                    <label for="branch">Branch</label>
+                    <input type="text" class="form-control" placeholder="Your branch" id="branch" name="branch">
+                  </div>
+                  <div class="form-group last mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Your Password" id="password" name="password">
+                  </div>
+                  <p>{{ error }}</p>
+                    <button type="button" onclick="startCapture()">Start Capture</button>
+               <video id="video" width="320" height="240" style="display: none;"></video>
+                  
+                  <input type="submit" value="Register" class="btn btn-block btn-primary">
+              </form>
+              <div class=" loginhere"> 
+                Already have account?  <span> <strong><a href="student_login.html">Login here</a></strong></span>
+              </div>
+              <p class="back"><a href="dashboard.html">Back</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function startCapture() {
+        
+        var usn = document.getElementById("usn").value;
+        
+        window.location.href = "/video_capture?usn=" + usn;
+    }
+</script>
+  </body>
+</html>           
+                

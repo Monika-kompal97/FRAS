@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <h1>Welcome to Student Registration System</h1>
+    <a href="/register">Register as Student</a>
+    <br>
+    <a href="/admin/login">Admin Login</a>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        video {  
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+          }
+          h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 50vh;
+            background-color: cadetblue;
+        }
+    </style>
+  </head>
+  <body>
+    <video poster="poster.jpg" autoplay playsinline muted loop>
+        <source src="{{ url_for('static', filename='images/face_video.mp4') }}" type="video/webm">
+      </video>
+      <h1>Welcome to Face Recognition based Attendance System</h1>
+      <div class="started"> 
+       <span> <strong><a href="/dashboard">Lets Get Started</a></strong></span>
+      </div>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>           
+                

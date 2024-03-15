@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Approved</th>
+            <th>Action</th>
+        </tr>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.username }}</td>
+                <td>{{ student.usn }}</td>
+                <td>{{ "Yes" if student.approved else "No" }}</td>
+                <td>
+                    {% if not student.approved %}
+                        <a href="/admin/approve/{{ student.usn }}">Approve</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <h2>Pending Student Registrations:</h2>
+    <ul>
+        {% for student in pending_students %}
+            <li>{{ student.get('usn') }} - {{ student.get('name') }} - 
+                <a href="{{ url_for('approve', usn=student.get('usn')) }}">Approve</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
